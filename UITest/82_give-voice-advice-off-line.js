@@ -1,0 +1,31 @@
+//用户已登录，且已申请过若干会员卡
+//用户处于离线状态（飞行模式）
+
+var target = UIATarget.localTarget();
+
+//发送语音建议
+var traverseCells = function(target,collectionView){
+	for(var i=1,len=collectionView.cells().length;i<len;i+=1){
+		if(collectionView.cells()[i].checkIsValid()==0)  break;
+		collectionView.cells()[i].tap();
+		target.delay(1);
+		target.frontMostApp().mainWindow().collectionViews()[0].cells()[0].tap();
+		target.delay(1);
+		//发送文本建议
+		UIALogger.logDebug("发送语音建议");
+		target.delay(1);
+		target.frontMostApp().mainWindow().collectionViews()[0].cells()[0].buttons()["录音按钮"].touchAndHold(3);
+		target.delay(3);
+		target.frontMostApp().mainWindow().collectionViews()[0].cells()[0].buttons()[1].tap();
+		target.delay(1);
+		target.tap({x:280.50,y:462.50});
+		/* 适用于iPad 2X
+		target.tap({x:654.00,y:964.00});
+		*/
+		target.delay(1);
+	}
+}
+
+UIALogger.logStart("离线状态下发送语音建议");
+traverseCells(target,target.frontMostApp().mainWindow().collectionViews()[0]);
+UIALogger.logPass("离线状态下发送语音建议");
