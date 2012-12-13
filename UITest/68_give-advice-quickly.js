@@ -52,8 +52,8 @@ var traverseCells = function(target,collectionView){
 	}
 }
 
-UIALogger.logStart("查看会员卡信息并进入'建议与反馈'页面");
+UIALogger.logStart("离线状态下快速发送建议");
 
 traverseCells(target,target.frontMostApp().mainWindow().collectionViews()[0]);
 
-UIALogger.logPass("查看会员卡信息并进入'建议与反馈'页面");
+UIALogger.logPass("离线状态下快速发送建议");
