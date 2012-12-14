@@ -1,5 +1,3 @@
-//用户已登录，且已申请过若干会员卡
-//用户未登陆处于离线状态
 
 var target = UIATarget.localTarget();
 
