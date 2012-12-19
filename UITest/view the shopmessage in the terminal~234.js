@@ -10,7 +10,7 @@ target.setDeviceOrientation(UIA_DEVICE_ORIENTATION_LANDSCAPELEFT);
 		target.delay(1);
 target.frontMostApp().mainWindow().buttons()["会员卡Info"].tap();
 		target.delay(2);
-target.frontMostApp().mainWindow().buttons()["返回选中"].tap();
+target.frontMostApp().mainWindow().buttons()["返回未选"].tap();
 		target.delay(1);
 target.setDeviceOrientation(UIA_DEVICE_ORIENTATION_PORTRAIT);
 		target.delay(1);
