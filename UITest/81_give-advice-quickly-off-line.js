@@ -14,7 +14,7 @@ var traverseButtons = function(target,cell){
 
 //查看会员卡信息并进入“建议与反馈”页面
 var traverseCells = function(target,collectionView){
-	for(var i=1,len=collectionView.cells().length;i<len;i+=1){
+	for(var i=1,len=collectionView.cells().length;i<len-1;i+=1){
 		if(collectionView.cells()[i].isVisible()==0)  break;
 		collectionView.cells()[i].tap();
 		target.delay(1);
